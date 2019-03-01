@@ -4,5 +4,10 @@ export default function getAssetMapData() {
     return;
   }
 
-  return JSON.parse(decodeURIComponent(assetMapString));
+  try{
+    // TODO compare with `MetaPlaceholder` constant
+    return JSON.parse(decodeURIComponent(assetMapString));
+  } catch(error) {
+    return;
+  }
 }
